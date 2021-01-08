@@ -1,0 +1,18 @@
+Graph G {
+0--1
+0--2
+0--3
+1--2
+1--4
+1--5
+2--5
+3--6
+0 [fillcolor=red, style=filled];
+1 [fillcolor=green, style=filled];;
+2 [fillcolor=moccasin, style=filled];
+3 [fillcolor=green, style=filled];;
+4 [fillcolor=red, style=filled];
+5 [fillcolor=red, style=filled];
+6 [fillcolor=red, style=filled];
+Press any key to continue . . . 
+}
