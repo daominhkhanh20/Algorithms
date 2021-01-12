@@ -1,5 +1,5 @@
 ## Dữ liệu và file weight trong quá trình thực hiện project 
-- Dữ liệu sử dụng cho việc xây dựng kiến trúc model CNN [link](https://www.kaggle.com/c/acc-german-traffic-sign-classification/data)
+- Dữ liệu sử dụng cho việc xây dựng kiến trúc model CNN ([link])(https://www.kaggle.com/c/acc-german-traffic-sign-classification/data)
 - Dữ liệu cho Yolo [link](https://drive.google.com/drive/folders/1Js5kipsTQwKDgkAca6mHPOC7H7-Y0Q3Q?usp=sharing)
 - File weight và file config cho Yolo[link](https://drive.google.com/drive/folders/1V4301Dvc6dYwLQJpWwm4SnY9F0Zuop0p?usp=sharing)
 
