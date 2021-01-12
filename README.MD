@@ -5,8 +5,8 @@
 
 # Các thức thực hiện project:
 - Đầu tiên thì nhóm chúng em dữ dụng mô hình YOLO để có thể detect được biển báo nằm ở ví trí nào trong bức ảnh đầu vào. Ở phần 2 sẽ có 2 phần chính:
-	+ Tiền xử lý dữ liệu: Chia tập dữ liệu đầu vào thành 5 nhóm, với mỗi nhóm là các biển báo có đặc điểm chung có thể quan sát được bằng mắt nhìn.
-        + Thực hiện việc training trong tầm 10 đến 12 tiếng để thu được file weight cho project.
+	- Tiền xử lý dữ liệu: Chia tập dữ liệu đầu vào thành 5 nhóm, với mỗi nhóm là các biển báo có đặc điểm chung có thể quan sát được bằng mắt nhìn.
+        - Thực hiện việc training trong tầm 10 đến 12 tiếng để thu được file weight cho project.
 
 - Sau khi có được file weight và detect được biển báo ở vùng nào trong bức ảnh thì bọn em sẽ crop vùng ảnh đó để cho qua model CNN để gán 	nhãn thật cho biển báo.
 
