@@ -1,7 +1,7 @@
 ## Dữ liệu và file weight trong quá trình thực hiện project 
-- Dữ liệu sử dụng cho việc xây dựng kiến trúc model CNN [link] (https://www.kaggle.com/c/acc-german-traffic-sign-classification/data)
-- Dữ liệu cho Yolo [link] (https://drive.google.com/drive/folders/1Js5kipsTQwKDgkAca6mHPOC7H7-Y0Q3Q?usp=sharing)
-- File weight và file config cho Yolo[link] (https://drive.google.com/drive/folders/1V4301Dvc6dYwLQJpWwm4SnY9F0Zuop0p?usp=sharing)
+- Dữ liệu sử dụng cho việc xây dựng kiến trúc model CNN [link](https://www.kaggle.com/c/acc-german-traffic-sign-classification/data)
+- Dữ liệu cho Yolo [link](https://drive.google.com/drive/folders/1Js5kipsTQwKDgkAca6mHPOC7H7-Y0Q3Q?usp=sharing)
+- File weight và file config cho Yolo[link](https://drive.google.com/drive/folders/1V4301Dvc6dYwLQJpWwm4SnY9F0Zuop0p?usp=sharing)
 
 ## Các thức thực hiện project:
 - Đầu tiên thì nhóm chúng em dữ dụng mô hình YOLO để có thể detect được biển báo nằm ở ví trí nào trong bức ảnh đầu vào.
