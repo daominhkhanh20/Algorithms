@@ -1,64 +1,76 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int NMAX=501;
-int N,m,k;
-int x[NMAX];
-int d[NMAX],store[NMAX];
-bool check(int mid){
-    int sum=0,cnt=0;
-    memset(d,0,sizeof(d));
+int n,m,k;
+const int N=506;
+int a[N];
+
+void input(){
+    cin>>m>>k;
     for(int i=1;i<=m;i++){
-        if(x[i]>mid)return false;
-        sum+=x[i];
-        if(sum>mid){
-            d[cnt]=i-1;
+        cin>>a[i];
+    }
+}
+
+int check(int mid){
+    int cnt=0,temp=0;
+    for(int i=1;i<=m;i++){
+        temp+=a[i];
+        if(temp>mid){
             cnt++;
-            sum=x[i];
+            temp=a[i];
         }
     }
-    cnt++;
-    cout<<cnt<<" "<<mid<<endl;
-    if(cnt==k){
-        return true;
+    if(cnt==k)return 1;
+    else if(cnt>k)return 0;
+    return -1;
+}
+void print_result(int max_ele){
+    int temp=0;
+    for(int i=1;i<=m;i++){
+        temp+=a[i];
+        if(temp>max_ele){
+            temp=a[i];
+            if(i==m){
+                cout<<a[i];
+                break;
+            }
+            cout<<" / ";
+        }
+        cout<<a[i]<<" ";
     }
-    return false;
-
-
+    cout<<endl;
 }
 void solve(){
-    int *max=max_element(x,x+m+1);
-    int start=*max;
-    int end=0;
-    for(int i=1;i<+m;i++){
-        end+=x[i];
-    }
+    int start=0,end;
+    for(int i=1;i<=m;i++)end+=a[i];
+    int answer=0;
 
     while(start<end){
         int mid=(start+end)/2;
-        if(check(mid)){
-            for(int i=1;i<=m;i++)store[i]=d[i];
+        int kk=check(mid);
+        if(kk==1){
+            answer=mid;
+            start=mid+1;
         }
-        end=mid-1;
+        else if(kk==0){
+            start=mid+1;
+        }
+        else{
+            end=mid-1;
+        }
     }
-    // int curr=0;
-    // for(int i=1;i<=m;i++){
-    //     cout<<x[i]<<" ";
-    //     if(d[curr]==i){
-    //         cout<<"  / ";
-    //         curr++;
-    //     }
-    // }
-    // cout<<endl;
+    print_result(answer);
 }
 
 int main(){
-    cin>>N;
-    for(int i=1;i<=N;i++){
-        cin>>m>>k;
-        for(int j=1;j<=m;j++){
-            cin>>x[j];
-        }
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cin>>n;
+    while(n>0){
+        input();
         solve();
+        n--;
+        memset(a,0,sizeof(a));
     }
     return 0;
 }

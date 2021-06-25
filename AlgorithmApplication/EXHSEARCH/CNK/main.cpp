@@ -1,26 +1,25 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define ll long long
-void solve(ll n,ll k,ll m){
-    ll f[k+1];
-    memset(f,0,sizeof(f));
-    f[0]=1;
-    k=min(k,n-k);
-    for(ll i=1;i<=n;i++){
-        for(ll j=min(i,k);j>0;j--){
-            f[j]=(f[j]+f[j-1])%m;
-        }
-    }
-    cout<<f[k]<<endl;
+#define N 102
+int a[N][N];
+
+int solve(int n,int k,int m){
+    if(n==k)return 1;
+    if(k==0) return 1;
+    else if(k==1)return n;
+    if(a[n][k]!=0)return a[n][k];
+    a[n][k]=solve(n-1,k,m)+solve(n-1,k-1,m);
+    return a[n][k]%m;
 }
+
 int main(){
     int t;
-    ll n,k,m;
     cin>>t;
-    for(int i=0;i<t;i++){
+    int n,k,m;
+    for(int i=1;i<=t;i++){
+        memset(a,0,sizeof(a[0][0])*N*N);
         cin>>n>>k>>m;
-        solve(n,k,m);
+        cout<<solve(n,k,m)<<endl;
     }
     return 0;
-
 }
