@@ -39,8 +39,11 @@ void solve(){
             f[i][j]=max(temp,0);
         }
     }
-    if(f[n][k+1]==0)cout<<-1<<endl;
-    else cout<<f[n][k+1];
+    show();
+    int temp=0;
+    for(int i=1;i<=k+1;i++)temp=max(temp,f[n][i]);
+    if(temp==0)cout<<-1;
+    else cout<<temp;
 }
 int main(){
     input();
