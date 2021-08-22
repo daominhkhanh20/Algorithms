@@ -47,6 +47,7 @@ void solve(){
         for(int i=1;i<=n;i++){
             if(visit[i]==0 && dis[i]<=dis[u])u=i;
         }
+        cout<<u<<endl;
         visit[u]=1;
         if(u==n)break;
         dijkstra(u);

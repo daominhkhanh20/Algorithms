@@ -14,6 +14,7 @@ int main(){
         if(a[i]!=a[i-1])result++;
     }
     cin>>q;
+    cout<<result<<endl;
     int x,y;
     for(int i=0;i<q;i++){
         cin>>x>>y;

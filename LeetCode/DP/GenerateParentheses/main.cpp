@@ -21,7 +21,7 @@ class Solution{
         }
         return result;
     }
-    vector<string>generateParentheis(int n){
+    vector<string>generateParenthesis(int n){
         vector<string>temp;
         vector<string>result=generateString(temp,"",0,0,n);
         return result;
@@ -30,7 +30,7 @@ class Solution{
 
 int main(){
     Solution solution;
-    vector<string>result=solution.generateParentheis(3);
+    vector<string>result=solution.generateParenthesis(3);
     for(string s:result){
         cout<<s<<endl;
     }

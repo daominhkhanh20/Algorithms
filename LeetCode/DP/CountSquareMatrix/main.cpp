@@ -3,17 +3,17 @@ using namespace std;
 
 class Solution{
     public:
-    static void show(vector<vector<int>>temp){
-        int n=temp.size();
-        int m=temp[0].size();
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                cout<<temp[i][j]<<" ";
-            }
-            cout<<endl;
-        }
-        cout<<endl;
-    }
+    // static void show(vector<vector<int>>temp){
+    //     int n=temp.size();
+    //     int m=temp[0].size();
+    //     for(int i=0;i<n;i++){
+    //         for(int j=0;j<m;j++){
+    //             cout<<temp[i][j]<<" ";
+    //         }
+    //         cout<<endl;
+    //     }
+    //     cout<<endl;
+    // }
     int countSquares(vector<vector<int>>&matrix){
         int n=matrix.size();
         int m=matrix[0].size();
@@ -26,7 +26,6 @@ class Solution{
                 result+=matrix[i][j];
             }
         }
-        show(matrix);
         return result;
     }
 };

@@ -1,20 +1,36 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define ull unsigned long long 
-ull M=10e9+5;
-#define N 105
-ull n,k;
-ull cnt=1;
-void solve(){
-    for(ull i=1;i<k;i++){
-        cnt*=(n+i)*1.0/i;
+const int M=1e9+7;
+#define ll long long
+struct MOD{
+    int d,x,y;
+    MOD(int _d,int _x, int _y):d(_d),x(_x),y(_y){}
+};
+
+MOD expand_euclid(int a,int b){
+    if(b==0)return MOD(a,1,0);
+    MOD temp=expand_euclid(b,a%b);
+    return MOD(temp.d,temp.y,temp.x-a/b*temp.y);
+}
+
+void solve(int n,int k){
+    ll a=1,b=1;
+    for(int i=1;i<=k;i++){
+        a=((n-k+i)*a)%M;
+        b=(b*i)%M;
+    }
+    MOD result=expand_euclid(b,M);
+    if(result.x<0){
+        cout<<a*(result.x+M)%M<<endl;
+    }
+    else{
+        cout<<a*result.x%M<<endl;
     }
 }
 int main(){
+    int n,k;
     cin>>n>>k;
-    solve();
-    cnt=cnt%M;
-    cout<<cnt<<endl;
+    solve(n+k-1,k-1);
     return 0;
 }
 
