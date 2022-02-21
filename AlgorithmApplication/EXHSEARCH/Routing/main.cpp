@@ -1,28 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define int long long
+#define ll long long
 int n,r;
 #define N 105
-int x[N][N];
+ll x[N][N];
 bool visit[N];
 vector<int>edge[N];
-int sum=0;
+ll sum=0;
 int segment=0;
-int min_result=INT_MAX;
+ll min_result=INT_MAX;
 void dfs(vector<int>list_des,int start,int end){
     for(int i=0;i<edge[start].size();i++){
         int v=edge[start][i];
-        if(!visit[v] && find(list_des.begin(),list_des.end(),v)!=list_des.end()){
+        if(!visit[v] && x[start][v]!=0 && find(list_des.begin(),list_des.end(),v)!=list_des.end()){
             visit[v]=true;
             sum+=x[start][v];
             segment-=1;
-            if(segment==1){
+            if(segment==0){
                 if(x[v][end]!=0){
                     sum+=x[v][end];
                     min_result=min(sum,min_result);
                 }
             }
-            else{
+            else if(sum<min_result){
                 dfs(list_des,v,end);
             }
             visit[v]=false;
@@ -32,7 +32,7 @@ void dfs(vector<int>list_des,int start,int end){
     }
 }
 
-main(){
+int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cin>>n>>r;
@@ -55,19 +55,15 @@ main(){
         while(str>>value){
             list_des.push_back(value);
         }
-        segment=list_des.size()-1;
         int start=list_des[0];
         int end=list_des[list_des.size()-1];
         list_des.erase(list_des.begin()+0);
         list_des.pop_back();
-        if(list_des.size()==1){
-            if(x[start][list_des[0]]==0 || x[list_des[0]][end]==0){
-                cout<<0<<endl;
-            }
-            else cout<<x[start][list_des[0]]+x[list_des[0]][end]<<endl;
-        }
+        segment=list_des.size();
+        if(segment==0)cout<<x[start][end]<<endl;
         else{
             sum=0;
+            min_result=INT_MAX;
             memset(visit,false,sizeof(visit));
             visit[start]=true;
             visit[end]=true;
@@ -76,5 +72,5 @@ main(){
             else cout<<min_result<<endl;
         }        
     }
-
+    return 0;
 }
